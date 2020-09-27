@@ -1,0 +1,13 @@
+*{
+    box-sizing: border-box;
+}
+.ShoWLocation img{
+width:250px;
+
+}
+.ShoWLocation .star{
+    width:15px
+}
+.ShoWLocation{
+    margin-bottom: 25px;
+}

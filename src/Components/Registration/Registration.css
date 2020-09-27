@@ -1,0 +1,56 @@
+.createCard{
+    width: 500px;
+    margin: 0 auto;
+    border: 2px solid lightgray !important;
+    background: white;
+}
+.cardBody{
+    padding: 34px;
+    margin: 8px;
+}
+.createAccountInput{
+    width: 25rem;
+    border-style: none none double;
+    margin: 5px 0;
+}
+.creactAccountButton{
+    border-style: none;
+    background-color: white;
+    color: #F9A51A;
+    text-decoration: none;
+}
+
+
+.button{
+    background-color: goldenrod;
+    border:none;
+    margin-left: 10px;
+    width:400px;
+    padding: 10px 0;
+
+}
+
+.creactAccountButton:hover{
+    text-decoration: underline;
+    color: #F9A51A;
+}
+.containerStyle{
+    width: 502px;
+    margin: 0 auto;
+}
+.lineStyle{
+    width: 149px;
+    height: 2px;
+    background-color: gray;
+    border-radius: 10px;
+   
+}
+.loginWithstyle{
+    background: white;
+    border-radius: 54px;
+    padding: 7px;
+    border: 1px solid gray;
+}
+.loginWithstyle img{
+    margin-left: -13px;
+}

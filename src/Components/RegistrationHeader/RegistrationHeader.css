@@ -1,0 +1,51 @@
+.header img{
+    width: 120px;
+    }
+    .header input{
+        
+        border: none;
+        flex:1;
+        height: 40px;
+        border: none;
+        outline: none;
+        padding-left: 10px;
+        
+           
+    }
+    .box1{
+       width:  250px;
+       height: 40px;
+       display: flex;
+       align-items: center;
+       border-radius: 10px;
+    }
+    .header{
+        display:flex;
+        align-items: center;
+        height: 100px;
+    }
+    .ul li {
+        list-style: none;
+        float: left;
+        font-size: 20px;
+        color:rgb(0, 0, 0);
+        padding-left: 30px;
+        cursor: pointer;
+    }
+    .search__nav{
+        display: flex;
+        align-items: center;
+        margin-left: 100px;
+    }
+    .search__nav button{
+        margin-left: 150px;
+        width:100px;
+        background-color: goldenrod;
+        border: none;
+        height: 40px;
+        border-radius: 10px;
+    }
+    .header{
+        margin-left: 120px;
+     
+    }
