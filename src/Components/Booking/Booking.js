@@ -9,12 +9,14 @@ import calenderIcon from '../../calender_icon.png'
 
 
 const Booking = (props) => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [loggedInUser,setLoggedInUser] = useContext(UserContext);
     const { title } = props.details;
+    setLoggedInUser(title);
+    console.log(loggedInUser);
     const history = useHistory();
-   const handleBooking=()=>{
-       history.push('/showLocation');
-   }
+    const handleBooking = () => {
+        history.push('/showLocation');
+    }
 
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());

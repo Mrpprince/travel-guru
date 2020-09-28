@@ -10,6 +10,7 @@ import RegistrationHeader from '../RegistrationHeader/RegistrationHeader';
 import { Row, Col, Container } from 'react-bootstrap';
 import icon1 from '../../fb.png';
 import googleIcon from '../../google.png';
+
 firebase.initializeApp(firebaseConfig);
 
 const Registration = (props) => {
@@ -19,16 +20,19 @@ const Registration = (props) => {
     const provider = new firebase.auth.GoogleAuthProvider();
     const FbProvider = new firebase.auth.FacebookAuthProvider();
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-
+    
+    console.log(loggedInUser);
     const location = useLocation();
     let { from } = location.state || { from: { pathname: "/showLocation" } };
-    const [isLogIn, setIsLogIn] = useState(false);
+
     const [user, setUser] = useState({
         isSignIn: false,
         email: '',
         password: '',
         error: '',
-        success: false
+        success: false,
+        firstName:'',
+        LastName:''
     })
     const history = useHistory();
     const handleSignIn = () => {
@@ -36,18 +40,19 @@ const Registration = (props) => {
 
             .then(res => {
 
-                const { displayName, photoURL, email } = res.user;
+                const { displayName, email } = res.user;
                 const signedInUser = {
                     isSignedIn: true,
                     name: displayName,
                     email: email,
-                    photo: photoURL,
+
                     success: true
                 }
                 setUser(signedInUser);
-                if (signedInUser.email) {
+                setLoggedInUser(signedInUser)
+                 
                     history.replace(from);
-                }
+                
 
 
             })
@@ -77,6 +82,7 @@ const Registration = (props) => {
         if (props.isLogIn && user.email && user.password) {
             firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
                 .then(res => {
+                   
                     const newUserInfo = { ...user };
                     newUserInfo.error = "";
                     newUserInfo.success = true;
@@ -114,23 +120,21 @@ const Registration = (props) => {
         e.preventDefault();
     }
     const handleFbSignIn = () => {
-        firebase.auth().signInWithPopup(FbProvider).then(function (result) {
+        firebase.auth().signInWithPopup(FbProvider)
+            .then(result => {
+                const fbSignIn={
+                    success:true
+                }
+                console.log(result);
+                setUser(fbSignIn);
+                setLoggedInUser(fbSignIn);
+                history.replace(from);
+               
+            }).catch(error => {
+               
+                console.log(error);
 
-            var token = result.credential.accessToken;
-
-            var user = result.user;
-            console.log('fb user', user);
-
-        }).catch(function (error) {
-
-            var errorCode = error.code;
-            var errorMessage = error.message;
-
-            var email = error.email;
-
-            var credential = error.credential;
-
-        });
+            });
     }
     return (
         <div >

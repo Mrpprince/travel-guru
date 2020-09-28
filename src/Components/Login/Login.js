@@ -6,7 +6,7 @@ const Login = (props) => {
     return (
         
             <div>
-                <button >Sign In with Google</button>
+                
             </div>
     
     );

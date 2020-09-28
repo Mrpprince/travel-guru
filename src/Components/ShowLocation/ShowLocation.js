@@ -5,7 +5,9 @@ import room2 from '../../room2.png';
 import room3 from '../../room3.png';
 import './ShowLocation.css'
 import { UserContext } from '../../App';
-import star from '../../star.png'
+import star from '../../star.png';
+import SimpleMap from '../Location/Location';
+
 
 const ShowLocation = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -75,7 +77,7 @@ const ShowLocation = () => {
                     </div>
                 </div>
                 <div className="col-md-4">
-
+                    <SimpleMap></SimpleMap>
                 </div>
             </div>
         </div>

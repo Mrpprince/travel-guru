@@ -7,7 +7,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Header from './Components/Header/Header';
+
 import MainBody from './Components/MainBody/MainBody';
 import UserPhase from './Components/UserPhase/UserPhase';
 import ShowLocation from './Components/ShowLocation/ShowLocation';
